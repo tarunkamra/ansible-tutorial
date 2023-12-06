@@ -1,3 +1,4 @@
-34.31.5.222
-107.178.218.23
-34.134.115.164
+35.232.142.144 apache_package=apache2
+34.16.76.187 apache_package=apache2
+35.202.53.118 apache_package=httpd
+34.72.103.237 apache_package=httpd
