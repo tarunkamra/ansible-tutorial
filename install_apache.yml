@@ -3,7 +3,22 @@
 - hosts: all
   become: true
   tasks:
-  - name: install apache2 package
+  - name: update repo index for Debian
+    apt:
+      update_cache: true
+    when: ansible_distribution == "Debian"
+
+  - name: install apache2 package for Debian
     apt:
       name: apache2
+    when: ansible_distribution == "Debian"
 
+  - name: update repo index for CentOS
+    yum:
+      update_cache: true
+    when: ansible_distribution == "CentOS"
+
+  - name: install apache for CentOS
+    yum:
+      name: httpd
+    when: ansible_distribution == "CentOS"
