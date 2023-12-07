@@ -1,4 +1,10 @@
-35.232.142.144 apache_package=apache2
-34.16.76.187 apache_package=apache2
-35.202.53.118 apache_package=httpd
-34.72.103.237 apache_package=httpd
+[aaloo_server]
+34.135.0.207
+
+
+[bhindi_server]
+35.223.220.130
+
+[chalgam_server]
+34.122.9.9
+

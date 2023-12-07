@@ -1,0 +1,40 @@
+
+- hosts: all
+  become: true
+  tasks:
+  - name: update repo index for Debian
+    apt:
+      update_cache: true
+    when: ansible_distribution == "Debian"
+
+- hosts: aaloo_server
+  become: true
+  tasks:
+  - name: install apache on Debian
+    apt:
+      name: apache2
+    when: ansible_distribution == "Debian"
+
+  - name: install apache on CentOS
+    dnf:
+      name: httpd
+      use_backend: "dnf4"
+    when: ansible_distribution == "CentOS"
+
+- hosts: bhindi_server
+  become: true
+  tasks:
+  - name: install db on bhindi_server
+    ansible.builtin.yum:
+      name: mariadb-server
+      state: latest
+
+
+- hosts: chalgam_server
+  become: true
+  tasks:
+  - name: install samba on chalgam
+    apt:
+      name: samba
+  
+
